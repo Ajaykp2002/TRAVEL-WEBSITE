@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>Registration</title>
+    <style>
+    .login-form {
+    width: 340px;
+    margin: 50px auto;
+  	font-size: 15px;
+}
+.login-form form {
+    margin-bottom: 15px;
+    background: #f7f7f7;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    padding: 30px;
+}
+.login-form h2 {
+    margin: 0 0 15px;
+}
+.form-control{
+    min-height: 28px;
+    border-radius: 2px;
+}
+    </style>
+</head>
+<body>
+<div class="login-form">
+<form action="register" method="post">
+    {% csrf_token %}
+    <h2 class="text-center">Registration Form</h2>
+    <div class="form-group">
+    <input type="text" name="username" class="form-control" placeholder="Enter your username" required="required"><BR>
+    </div>
+    <div class="form-group">
+    <input type="text" name="first_name" class="form-control" placeholder="Enter your First name" required="required"><BR>
+    </div>
+    <div class="form-group">
+    <input type="text" name="last_name" class="form-control" placeholder="Enter your last name" required="required"><BR>
+    </div>
+    <div class="form-group">
+    <input type="email" name="email" class="form-control" placeholder="Enter email" required="required"><BR>
+    </div>
+    <div class="form-group">
+    <input type="password" name="password" class="form-control" placeholder="Enter your password" required="required"><BR>
+    </div>
+    <div class="form-group">
+    <input type="password" name="password1" class="form-control" placeholder="Confirm your password"  required="required"><BR>
+    </div>
+    <input type="submit" required="required" style="min-height:28px;background-color:blue;color:solid black; min-height: 28px;border-radius: 2px; font-size: 15px;font-weight: bold;    color: #fff;
+    background-color: #007bff;border-color: #007bff;">
+</form>
+    <div class="login-form">
+{% for i in messages %}
+<h2>{{i}}</h2>
+{% endfor %}
+</body>
+</html>
